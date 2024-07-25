@@ -12,15 +12,16 @@ class DiceRoller extends StatefulWidget {
 
 // _DiceRollerState means that the class will be private to this file
 class _DiceRollerState extends State<DiceRoller> {
-  var activeDiceImage = 'assets/images/dice-1.png';
+  // var activeDiceImage = 'assets/images/dice-1.png';
+  var currentRoll = 2;
 
   void diceRoller() {
-    var diceRoll = Random().nextInt(6) + 1; // 1 <> 6
+    // var diceRoll =
     // setState is used to update the class variables
     // tells the build function to re-execute the build function
     // of the state it is called in
     setState(() {
-      activeDiceImage = 'assets/images/dice-$diceRoll.png';
+      currentRoll = Random().nextInt(6) + 1; // 1 <> 6
     });
     // print('image change');
   }
@@ -31,7 +32,7 @@ class _DiceRollerState extends State<DiceRoller> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          activeDiceImage,
+          'assets/images/dice-$currentRoll.png',
           width: 200,
         ),
         const SizedBox(height: 20),

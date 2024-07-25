@@ -24,13 +24,21 @@ class ColorContainer extends StatelessWidget {
           // Center aligns its child widget within the available space.
           // child: StyledText('das is brot'),
           child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
             'assets/images/dice-1.png',
             width: 200,
           ),
+          const SizedBox(height: 20),
           TextButton(
             onPressed: diceRoller,
+            style: TextButton.styleFrom(
+                // padding: ,
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                )),
             child: const Text('Roll dice'),
           )
         ],

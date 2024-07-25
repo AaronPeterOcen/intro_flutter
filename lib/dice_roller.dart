@@ -14,7 +14,12 @@ class _DiceRollerState extends State<DiceRoller> {
   var activeDiceImage = 'assets/images/dice-1.png';
 
   void diceRoller() {
-    activeDiceImage = 'assets/images/dice-3.png';
+    // setState is used to update the class variables
+    // tells the build function to re-execute the build function
+    // of the state it is called in
+    setState(() {
+      activeDiceImage = 'assets/images/dice-3.png';
+    });
     // print('image change');
   }
 
